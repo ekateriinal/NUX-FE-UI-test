@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Dashboard | Nortal</title>
+    <script defer src="js/script.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <a href="#" class="header-text">Hello Nortal</a>
+        </div>
+        <nav>
+            <ul class="nav-items">
+                <li>
+                    <button class="login-btn btn blue">Login</button>
+                </li>
+                <li class="lang-switch">
+                    <button class="dropdown-btn btn" onclick="showToggle()">
+                        <span>
+                            <img class="lang-icon" src="images/lang-icon.svg">
+                            <span class="lang-text sm-text">English </span>
+                            <img class="dropwown-arrow" src="images/btn-down-icon.svg">
+                        </span>
+                    </button>
+                    <div class="dropdown-content" id="switcher-content">
+                        <div class="lang-holder">
+                            <a href="#" class="lang-text sm-text">English</a>
+                            <a href="#" class="sm-text mobile-only">EN</a>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="lang-holder">
+                            <a href="#" class="lang-text sm-text">Eesti</a>
+                            <a href="#" class="sm-text mobile-only">EE</a>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="lang-holder">
+                            <a href="#" class="lang-text sm-text">Русский</a>
+                            <a href="#" class="sm-text mobile-only">РУ</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+    <!-- Main Section -->
+    <main class="main-section">
+        <h1 class="dash-header xl-text">Dashboard</h1>
+        <!-- Cards -->
+        <div class="cards-grid">
+            <div class="item">
+                <div class="icon-wrapper">
+                    <img src="images/light-bulb-icon.svg">
+                </div>
+                <div class="item-info">
+                    <span class="sm-text">Total items</span>
+                    <span class="numbers">13948</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="icon-wrapper">
+                    <img src="images/map-pointer-icon.svg">
+                </div>
+                <div class="item-info">
+                    <span class="sm-text">Locations</span>
+                    <span class="numbers">42</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="icon-wrapper">
+                    <img src="images/thunder-icon.svg">
+                </div>
+                <div class="item-info">
+                    <span class="sm-text">Over budget</span>
+                    <span class="numbers">939</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="icon-wrapper">
+                    <img src="images/flag-icon.svg">
+                </div>
+                <div class="item-info">
+                    <span class="sm-text">Successfully added</span>
+                    <span class="numbers">4002</span>
+                </div>
+            </div>
+        </div>
+        <!-- Tabs Section -->
+        <section class="tab">
+            <div class="tabs">
+                <button id="tab-1" class="tab-item tab-active">
+                    <span class="sm-text">Published <span class="xs-tabs">listings</span></span>
+                </button><button id="tab-2" class="tab-item">
+                    <span class="sm-text">Unpublished <span class="xs-tabs">listings</span></span>
+                </button>
+            </div>
+            <div class="tab-content">
+                <div id="tab-1-content" class="tab-content-item show">
+                    <div class="table-resp">
+                        <div class="table-grid">
+                            <span class="sortable">
+                                <strong>Name</strong>
+                                <img src="images/sort-btn-icon .svg">
+                            </span>
+                            <span class="sortable">
+                                <strong>Name</strong>
+                                <img src="images/sort-btn-icon .svg">
+                            </span>
+                            <span class="sortable">
+                                <strong>Description</strong>
+                            </span>
+                            <span class="col-1">Philip Reid</span>
+                            <span>10.02.2021</span>
+                            <span class="text">While inch thought done person behavior weak connected increase sang
+                                letter exchange object</span>
+                            <span class="col-1">Bess Lotte Petersson-Kozlovsky</span>
+                            <span>30.12.2021</span>
+                            <span class="text">Brain final never respect carry recently caught add dull process
+                                action</span>
+                            <span class="col-1">Bess Peters</span>
+                            <span>09.03.2020</span>
+                            <span></span>
+                            <span class="col-1">Stella Sarah Briggs</span>
+                            <span>07.09.2021</span>
+                            <span class="text">Ants fat indicate ear between sides place road window wave upon middle
+                                dinner</span>
+                            <span class="col-1">Tabitha Bertha Hardy</span>
+                            <span>10.11.2021</span>
+                            <span class="text">Dozen either hollow curve private tonight difficulty monkey</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab-2-content" class="tab-content-item">
+                    <div class="table-grid">
+                        <span class="sortable">
+                            <strong>Name</strong>
+                            <img src="images/sort-btn-icon .svg">
+                        </span>
+                        <span class="sortable">
+                            <strong>Name</strong>
+                            <img src="images/sort-btn-icon .svg">
+                        </span>
+                        <span class="sortable">
+                            <strong>Description</strong>
+                        </span>
+                        <span class="col-1">Philip Reid</span>
+                        <span>10.02.2021</span>
+                        <span class="text">While inch thought done person behavior weak connected increase sang letter
+                            exchange object</span>
+                        <span class="col-1">Bess Lotte Petersson-Kozlovsky</span>
+                        <span>30.12.2021</span>
+                        <span class="text">Brain final never respect carry recently caught add dull process
+                            action</span>
+                        <span class="col-1">Bess Peters</span>
+                        <span>09.03.2020</span>
+                        <span></span>
+                    </div>
+                </div>
+        </section>
+        </div>
+        </div>
+        <!-- Modal -->
+        <section class="modal">
+            <div class="modal-box">
+                <div class="modal-body">
+                    <button class="close btn"></button>
+                    <h3 class="xl-text">Login</h3>
+                    <form>
+                        <div class="form-control">
+                            <label for="username">User</label>
+                            <input type="text" id="username">
+                        </div>
+                        <div class="form-control">
+                            <label for="password">Password</label>
+                            <input type="text" id="password">
+                        </div>
+                    </form>
+                    <div class="modal-footer">
+                        <button class="btn ghost-btn">Forgot password?</button>
+                        <button class="btn blue">Authenticate</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Copyright 2021</p>
+    </footer>
+</body>
+
+</html>
