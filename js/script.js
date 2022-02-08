@@ -86,7 +86,7 @@ function escapeClick(event) {
 
 
 const trapFocus = (element, prevFocusElm = document.activeElement) => {
-    const focusEls = Array.from(element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])')
+    const focusEls = Array.from(element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="password"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])')
     );
     const firstFocusElm = focusEls[0];
     const lastFocusElm = focusEls[focusEls.length - 1];
