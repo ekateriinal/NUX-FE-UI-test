@@ -6,6 +6,9 @@ window.addEventListener('keydown', outsideDrop);
 
 function showToggle() {
     dropContent.classList.toggle('show');
+    dropContent.classList.add('dropopen');
+    document.getElementById('btn-lang').setAttribute('aria-expanded', 'true');
+
 }
 
 function hideContent(e) {
@@ -13,6 +16,7 @@ function hideContent(e) {
         if (dropContent.classList.contains('show')) {
             dropContent.classList.remove('show');
         }
+        document.getElementById('btn-lang').setAttribute('aria-expanded', 'false');
     }
 }
 
@@ -28,7 +32,6 @@ function outsideDrop(e) {
 const tabItems = document.querySelectorAll('[role="tab"]');
 const tabContent = document.querySelector('[role="tablist"]');
 
-/* tabItems.forEach(item => item.addEventListener('click', selectItem)); */
 tabItems.forEach(tab => {
     tab.addEventListener('click', changeTabs);
 });
@@ -55,25 +58,8 @@ tabContent.addEventListener('keydown', e => {
         tabItems[tabFocus].setAttribute('tabindex', 0);
         tabItems[tabFocus].focus()
     }
-   /*  removeActiveState();
-    removeShow();
-
-    this.classList.add('tab-active');
-
-    const tabContentItem = document.querySelector(`#${this.id}-content`);
-
-    tabContentItem.classList.add('show'); */
 });
 
-/* function removeActiveState() {
-    tabItems.forEach(item => item.classList.remove('tab-active'));
-}
-
-function removeShow() {
-    tabContent.forEach(item => item.classList.remove('show'));
-} */
-
-//Remove all selected tabs
 function changeTabs(e) {
     const target = e.target;
     const parent = target.parentNode;

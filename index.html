@@ -17,32 +17,32 @@
         <nav>
             <ul class="nav-items">
                 <li>
-                    <button class="login-btn btn blue">Login</button>
+                    <button aria-label="login button" class="login-btn btn blue">Login</button>
                 </li>
                 <li class="lang-switch">
-                    <button class="dropdown-btn btn" onclick="showToggle()">
+                    <button type="button" aria-expanded="false" id="btn-lang" aria-label="language menu" aria-controls="switcher-content" aria-haspopup="listbox" class="dropdown-btn btn" onclick="showToggle()">
                         <span>
                             <img class="lang-icon" src="images/lang-icon.svg">
                             <span class="lang-text sm-text">English </span>
-                            <img class="dropwown-arrow" src="images/btn-down-icon.svg">
+                            <img class="dropdown-arrow" src="images/btn-down-icon.svg">
                         </span>
                     </button>
-                    <div class="dropdown-content" id="switcher-content">
-                        <div class="lang-holder">
+                    <ul role="listbox" class="dropdown-content" id="switcher-content">
+                        <li role="option" class="lang-holder">
                             <a href="#" class="l-txt lang-text sm-text">English</a>
                             <a href="#" class="l-txt sm-text mobile-only">EN</a>
-                        </div>
+                        </li>
                         <!-- <div class="divider"></div> -->
-                        <div class="lang-holder">
+                        <li role="option" class="lang-holder">
                             <a href="#" class="l-txt lang-text sm-text">Eesti</a>
                             <a href="#" class="l-txt sm-text mobile-only">EE</a>
-                        </div>
+                        </li>
                         <!-- <div class="divider"></div> -->
-                        <div class="lang-holder">
+                        <li role="option" class="lang-holder">
                             <a href="#" class="l-txt lang-text sm-text">Русский</a>
                             <a href="#" class="l-txt sm-text mobile-only">РУ</a>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </nav>
@@ -168,7 +168,7 @@
         <section class="modal">
             <div class="modal-box">
                 <form class="modal-body">
-                    <button class="close btn"></button>
+                    <button tabindex="-1" class="close btn"></button>
                     <h3 class="xl-text">Login</h3>
                     <!-- <form> -->
                         <div class="form-control">
