@@ -92,15 +92,15 @@
         </div>
         <!-- Tabs Section -->
         <section class="tab">
-            <div class="tabs">
-                <button id="tab-1" class="tab-item tab-active">
+            <div role="tablist" class="tabs">
+                <button role="tab" aria-controls="panel-1" id="tab-1" aria-selected="true" tabindex="0" class="tab-item">
                     <span class="sm-text">Published <span class="xs-tabs">listings</span></span>
-                </button><button id="tab-2" class="tab-item">
+                </button><button role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" aria-selected="false" tabindex="-1" class="tab-item">
                     <span class="sm-text">Unpublished <span class="xs-tabs">listings</span></span>
                 </button>
             </div>
             <div class="tab-content">
-                <div id="tab-1-content" class="tab-content-item show">
+                <div role="tabpanel" aria-labelledby="tab-1" id="panel-1" class="tab-content-item">
                     <div class="table-resp">
                         <div class="table-grid">
                             <span class="sortable">
@@ -135,7 +135,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="tab-2-content" class="tab-content-item">
+                <div aria-labelledby="tab-2" role="tabpanel" id="panel-2" class="tab-content-item" hidden>
                     <div class="table-grid">
                         <span class="sortable">
                             <strong>Name</strong>

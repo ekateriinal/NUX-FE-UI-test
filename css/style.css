@@ -175,6 +175,7 @@ nav .login-btn {
 
 .dropdown-content .mobile-only {
     display: none;
+    justify-self: center;
 }
 
 .show {
@@ -268,9 +269,9 @@ nav .login-btn {
     z-index: 10;
 }
 
-.tab-active {
+.tab-item[aria-selected="true"] {
     background: var(--white-color);
-    z-index: 1;
+    /* z-index: 1; */
 }
 
 .tab-active:hover {
@@ -279,7 +280,7 @@ nav .login-btn {
 
 /* Tabs content | table section */
 .tab-content-item {
-    display: none;
+    /* display: none; */
     min-height: 21.25em;
 }
 
@@ -464,6 +465,7 @@ nav .login-btn {
      .dropdown-content .lang-holder {
         height: 2.5em;
         display: flex;
+        align-items: center;
     }
 
     .lang-holder:not(:last-of-type)::after {
@@ -480,7 +482,6 @@ nav .login-btn {
 
     .dropdown-content .mobile-only {
         display: block;
-        justify-self: center;
     }
 
     /* Tabs content | table section */
@@ -528,7 +529,7 @@ nav .login-btn {
     }
 
     .modal-footer {
-        flex-direction: column-reverse;
+        flex-direction: row;
         margin-top: 1.75em;
         gap: 0.5em;
     }

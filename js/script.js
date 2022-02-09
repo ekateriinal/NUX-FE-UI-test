@@ -25,28 +25,77 @@ function outsideDrop(e) {
 }
 
 //Tabs
-const tabItems = document.querySelectorAll('.tab-item');
-const tabContent = document.querySelectorAll('.tab-content-item');
+const tabItems = document.querySelectorAll('[role="tab"]');
+const tabContent = document.querySelector('[role="tablist"]');
 
-tabItems.forEach(item => item.addEventListener('click', selectItem));
+/* tabItems.forEach(item => item.addEventListener('click', selectItem)); */
+tabItems.forEach(tab => {
+    tab.addEventListener('click', changeTabs);
+});
 
-function selectItem(event) {
-    removeActiveState();
+let tabFocus = 0;
+
+tabContent.addEventListener('keydown', e => { 
+    if (e.keyCode === 39 || e.keyCode === 37) {
+        tabItems[tabFocus].setAttribute('tabindex', -1);
+        if (e.keyCode === 39) {
+            tabFocus++;
+            // If at the end --> go to the start
+            if (tabFocus >= tabItems.length) {
+                tabFocus = 0;
+            }
+        } else if (e.keyCode === 37) {
+            tabFocus--;
+            //// If at the start --> go to the end
+            if (tabFocus < 0) {
+                tabFocus = tabItems.length - 1
+            }
+        }
+
+        tabItems[tabFocus].setAttribute('tabindex', 0);
+        tabItems[tabFocus].focus()
+    }
+   /*  removeActiveState();
     removeShow();
 
     this.classList.add('tab-active');
 
     const tabContentItem = document.querySelector(`#${this.id}-content`);
 
-    tabContentItem.classList.add('show');
-}
+    tabContentItem.classList.add('show'); */
+});
 
-function removeActiveState() {
+/* function removeActiveState() {
     tabItems.forEach(item => item.classList.remove('tab-active'));
 }
 
 function removeShow() {
     tabContent.forEach(item => item.classList.remove('show'));
+} */
+
+//Remove all selected tabs
+function changeTabs(e) {
+    const target = e.target;
+    const parent = target.parentNode;
+    const grandparent = parent.parentNode;
+
+ // Remove all current selected tabs
+    parent
+    .querySelectorAll('[aria-selected="true"]')
+    .forEach(t => t.setAttribute('aria-selected', false));
+
+    // Set this tab as selected
+    target.setAttribute('aria-selected', true);
+
+    // Hide all tab panels
+     grandparent
+     .querySelectorAll('[role="tabpanel"]')
+     .forEach(p => p.setAttribute('hidden', true));
+
+    // Show the selected panel
+     grandparent.parentNode
+     .querySelector(`#${target.getAttribute('aria-controls')}`)
+     .removeAttribute('hidden');
 }
 
 // Modal
